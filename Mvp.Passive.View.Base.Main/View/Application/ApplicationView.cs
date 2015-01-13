@@ -71,7 +71,7 @@ namespace Mvp.Passive.View.Base.Main.View.Application
         {
             var textBox = (TextBox) sender;
 
-            if (string.IsNullOrEmpty(textBox.Text))
+            if (textBox.Text.Length == 0)
             {
                 e.Cancel = true;
                 this.textBoxValidationErrorProvider.SetError(this.textBoxValidation, "Mandatory field");

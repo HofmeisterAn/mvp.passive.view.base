@@ -59,10 +59,9 @@ namespace Mvp.Passive.View.Base.Main.View.Application
             // 
             // textBoxValidationErrorProvider
             //
-            textBoxValidationErrorProvider = new System.Windows.Forms.ErrorProvider();
             textBoxValidationErrorProvider.SetIconAlignment(this.textBoxValidation, ErrorIconAlignment.MiddleRight);
             textBoxValidationErrorProvider.SetIconPadding(this.textBoxValidation, 2);
-            textBoxValidationErrorProvider.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;;
+            textBoxValidationErrorProvider.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
             // 
             // ApplicationView
             // 
@@ -74,7 +73,6 @@ namespace Mvp.Passive.View.Base.Main.View.Application
             this.Name = "ApplicationView";
             this.ResumeLayout(false);
             this.PerformLayout();
-
         }
 
         private System.Windows.Forms.TextBox textBoxFirstName;
