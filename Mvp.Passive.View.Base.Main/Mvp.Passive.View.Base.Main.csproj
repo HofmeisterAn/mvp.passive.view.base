@@ -85,6 +85,7 @@
       <DependentUpon>ApplicationView.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PreBuildEvent>copy "$(SolutionDir)Mvp.Passive.View.Base.Database\App.config" "$(TargetPath).config"</PreBuildEvent>

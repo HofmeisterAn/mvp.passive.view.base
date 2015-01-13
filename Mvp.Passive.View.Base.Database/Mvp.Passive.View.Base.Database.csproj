@@ -55,12 +55,21 @@
     <Compile Include="Repository\GroupConfiguration.cs" />
     <Compile Include="Repository\UserRepository.cs" />
     <Compile Include="TestContext.cs" />
+    <Compile Include="TestContext.Views.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TestContext.Views.tt</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config">
       <SubType>Designer</SubType>
     </None>
     <None Include="Packages.config" />
+    <None Include="TestContext.Views.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>TestContext.Views.cs</LastGenOutput>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Mvp.Passive.View.Base.Model\Mvp.Passive.View.Base.Model.csproj">
@@ -68,7 +77,14 @@
       <Name>Mvp.Passive.View.Base.Model</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <EmbeddedResource Include="TestContext.Views.xml">
+      <DependentUpon>TestContext.Views.tt</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

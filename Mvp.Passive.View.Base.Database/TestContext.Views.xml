@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<views MappingHash="598861e93823c2dd39f8ba2d7514028e5e81164d0a27733dfd061b33d579728c">
+  <view extent="CodeFirstDatabase.Group">
+    <![CDATA[
+    SELECT VALUE -- Constructing Group
+        [CodeFirstDatabaseSchema.Group](T1.Group_Id, T1.Group_Name, T1.Group_Description)
+    FROM (
+        SELECT 
+            T.Id AS Group_Id, 
+            T.Name AS Group_Name, 
+            T.Description AS Group_Description, 
+            True AS _from0
+        FROM TestContext.Groups AS T
+    ) AS T1]]>
+  </view>
+  <view extent="CodeFirstDatabase.User">
+    <![CDATA[
+    SELECT VALUE -- Constructing User
+        [CodeFirstDatabaseSchema.User](T1.User_Id, T1.User_FirstName, T1.User_Surname)
+    FROM (
+        SELECT 
+            T.Id AS User_Id, 
+            T.FirstName AS User_FirstName, 
+            T.Surname AS User_Surname, 
+            True AS _from0
+        FROM TestContext.Users AS T
+    ) AS T1]]>
+  </view>
+  <view extent="CodeFirstDatabase.GroupUser">
+    <![CDATA[
+    SELECT VALUE -- Constructing GroupUser
+        [CodeFirstDatabaseSchema.GroupUser](T1.GroupUser_Group, T1.GroupUser_User)
+    FROM (
+        SELECT 
+            Key(T.Group_Users_Source).Id AS GroupUser_Group, 
+            Key(T.Group_Users_Target).Id AS GroupUser_User, 
+            True AS _from0
+        FROM TestContext.Group_Users AS T
+    ) AS T1]]>
+  </view>
+  <view extent="TestContext.Groups">
+    <![CDATA[
+    SELECT VALUE -- Constructing Groups
+        [Mvp.Passive.View.Base.Database.Group](T1.Group_Id, T1.Group_Name, T1.Group_Description)
+    FROM (
+        SELECT 
+            T.Id AS Group_Id, 
+            T.Name AS Group_Name, 
+            T.Description AS Group_Description, 
+            True AS _from0
+        FROM CodeFirstDatabase.[Group] AS T
+    ) AS T1]]>
+  </view>
+  <view extent="TestContext.Users">
+    <![CDATA[
+    SELECT VALUE -- Constructing Users
+        [Mvp.Passive.View.Base.Database.User](T1.User_Id, T1.User_FirstName, T1.User_Surname)
+    FROM (
+        SELECT 
+            T.Id AS User_Id, 
+            T.FirstName AS User_FirstName, 
+            T.Surname AS User_Surname, 
+            True AS _from0
+        FROM CodeFirstDatabase.User AS T
+    ) AS T1]]>
+  </view>
+  <view extent="TestContext.Group_Users">
+    <![CDATA[
+    SELECT VALUE -- Constructing Group_Users
+        [Mvp.Passive.View.Base.Database.Group_Users](T3.[Group_Users.Group_Users_Source], T3.[Group_Users.Group_Users_Target])
+    FROM (
+        SELECT -- Constructing Group_Users_Source
+            CreateRef(TestContext.Groups, row(T2.[Group_Users.Group_Users_Source.Id]), [Mvp.Passive.View.Base.Database.Group]) AS [Group_Users.Group_Users_Source], 
+            T2.[Group_Users.Group_Users_Target]
+        FROM (
+            SELECT -- Constructing Group_Users_Target
+                T1.[Group_Users.Group_Users_Source.Id], 
+                CreateRef(TestContext.Users, row(T1.[Group_Users.Group_Users_Target.Id]), [Mvp.Passive.View.Base.Database.User]) AS [Group_Users.Group_Users_Target]
+            FROM (
+                SELECT 
+                    T.[Group] AS [Group_Users.Group_Users_Source.Id], 
+                    T.User AS [Group_Users.Group_Users_Target.Id], 
+                    True AS _from0
+                FROM CodeFirstDatabase.GroupUser AS T
+            ) AS T1
+        ) AS T2
+    ) AS T3]]>
+  </view>
+</views>
