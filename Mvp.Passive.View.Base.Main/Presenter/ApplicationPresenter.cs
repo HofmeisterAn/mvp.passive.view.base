@@ -1,4 +1,4 @@
-﻿using Mvp.Passive.View.Base.Model.Repository;
+﻿using Mvp.Passive.View.Base.Model.IRepository;
 using Mvp.Passive.View.Base.Main.Engine;
 using Mvp.Passive.View.Base.Main.View.Application;
 

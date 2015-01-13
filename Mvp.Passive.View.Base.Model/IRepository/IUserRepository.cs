@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Mvp.Passive.View.Base.Model.Repository
+namespace Mvp.Passive.View.Base.Model.IRepository
 {
     public interface IUserRepository
     {

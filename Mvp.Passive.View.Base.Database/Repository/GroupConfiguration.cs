@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using Mvp.Passive.View.Base.Model;
-using Mvp.Passive.View.Base.Model.Repository;
+using Mvp.Passive.View.Base.Model.IRepository;
 
 namespace Mvp.Passive.View.Base.Database.Repository
 {

@@ -1,5 +1,5 @@
 ﻿using Mvp.Passive.View.Base.Database.Repository;
-using Mvp.Passive.View.Base.Model.Repository;
+using Mvp.Passive.View.Base.Model.IRepository;
 
 namespace Mvp.Passive.View.Base.Main.Repository
 {
