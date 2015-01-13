@@ -5,6 +5,9 @@ using Mvp.Passive.View.Base.Main.Presenter;
 
 namespace Mvp.Passive.View.Base.Main.View.Application
 {
+    /// <summary>
+    /// Passiv view implementation. Everything is processed in <see cref="ApplicationPresenter"/>.
+    /// </summary>
     public partial class ApplicationView : Form, IApplicationView
     {
         public ApplicationPresenter Presenter { set; private get; }

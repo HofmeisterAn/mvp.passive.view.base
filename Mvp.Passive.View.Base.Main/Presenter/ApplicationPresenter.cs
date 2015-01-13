@@ -4,6 +4,10 @@ using Mvp.Passive.View.Base.Main.View.Application;
 
 namespace Mvp.Passive.View.Base.Main.Presenter
 {
+    /// <summary>
+    /// Aacts upon the model and the view. Retrieves data from repositories and formats it to display the information in the view. Is associated to <seealso cref="IApplicationRepository"/> and <seealso cref="ApplicationView"/>.
+    /// This implementation uses a background worker queue to execute intensive tasks and is not blocking the UI.
+    /// </summary>
     public class ApplicationPresenter
     {
         private readonly IApplicationView view;
