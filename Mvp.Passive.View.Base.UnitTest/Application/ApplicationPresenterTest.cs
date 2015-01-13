@@ -22,8 +22,8 @@ namespace Mvp.Passive.View.Base.UnitTest.Application
         [Test]
         public void IsViewInitializing()
         {
-            Assert.That(string.IsNullOrEmpty(this.mockApplicationView.FirstName), Is.False, "First name ist null or empty.");
-            Assert.That(string.IsNullOrEmpty(this.mockApplicationView.Surname), Is.False, "Surname ist null or empty.");
+            Assert.That(this.mockApplicationView.FirstName.Length == 0, Is.False, "First name is null or empty.");
+            Assert.That(this.mockApplicationView.Surname.Length == 0, Is.False, "Surname is null or empty.");
         }
     }
 }
