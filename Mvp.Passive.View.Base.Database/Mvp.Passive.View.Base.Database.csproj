@@ -52,7 +52,7 @@
     <Compile Include="Configuration\GroupConfiguration.cs" />
     <Compile Include="Configuration\UserConfiguration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Repository\GroupConfiguration.cs" />
+    <Compile Include="Repository\GroupRepository.cs" />
     <Compile Include="Repository\UserRepository.cs" />
     <Compile Include="TestContext.cs" />
     <Compile Include="TestContext.Views.cs">

@@ -5,7 +5,7 @@ using Mvp.Passive.View.Base.Model.IRepository;
 
 namespace Mvp.Passive.View.Base.Database.Repository
 {
-    public class GroupConfiguration : IGroupRepository
+    public class GroupRepository : IGroupRepository
     {
         public IEnumerable<Group> FindAll()
         {

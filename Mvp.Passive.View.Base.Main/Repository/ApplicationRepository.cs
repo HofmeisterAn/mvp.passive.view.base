@@ -14,7 +14,7 @@ namespace Mvp.Passive.View.Base.Main.Repository
         
         public ApplicationRepository()
         {
-            this.Group = new GroupConfiguration();
+            this.Group = new GroupRepository();
             this.User = new UserRepository();
         }
     }
