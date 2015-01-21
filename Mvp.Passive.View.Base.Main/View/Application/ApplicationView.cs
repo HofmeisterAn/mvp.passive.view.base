@@ -12,11 +12,6 @@ namespace Mvp.Passive.View.Base.Main.View.Application
     {
         public ApplicationPresenter Presenter { set; private get; }
 
-        public void IsWorking(bool isWorking)
-        {
-            this.UseWaitCursor = isWorking;
-        }
-
         public long UserId { get; set; }
 
         public string FirstName{
